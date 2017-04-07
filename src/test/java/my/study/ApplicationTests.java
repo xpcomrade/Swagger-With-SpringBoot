@@ -1,7 +1,7 @@
 package my.study;
 
 import my.study.controller.IndexController;
-import my.study.controller.TestController;
+import my.study.controller.UserController;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -32,7 +32,7 @@ public class ApplicationTests {
     @Before
     public void setUp() throws Exception {
         mvc = MockMvcBuilders.standaloneSetup(
-                new TestController(),
+                new UserController(),
                 new IndexController()
         ).build();
     }

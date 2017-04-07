@@ -18,7 +18,7 @@ import java.util.Map;
  * Description: TODO(这里用一句话描述这个类的作用). <br/>
  */
 @RestController
-public class TestController {
+public class UserController {
 
     @Autowired
     private TestService testService;
