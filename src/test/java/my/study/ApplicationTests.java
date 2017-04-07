@@ -48,7 +48,7 @@ public class ApplicationTests {
     }
 
     @Test
-    public void testTestController() throws Exception {
+    public void testUserController() throws Exception {
         RequestBuilder request = null;
 
         request = get("/users/18516291668");
