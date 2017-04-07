@@ -1,5 +1,6 @@
 package my.study.controller;
 
+import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.*;
 
 /**
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 public class IndexController {
 
+    @ApiOperation(value = "首页", notes = "")
     @RequestMapping(value = "/", method = RequestMethod.GET)
     String index() {
         return "Hello, world";
