@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 public class IndexController {
 
     @ApiOperation(value = "首页", notes = "")
-    @RequestMapping(value = "/", method = RequestMethod.GET)
+    @RequestMapping(value = {"/", "/index"}, method = RequestMethod.GET)
     String index() {
         return "Hello, world";
     }
