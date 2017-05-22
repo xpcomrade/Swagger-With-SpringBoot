@@ -1,13 +1,10 @@
 package my.study.mock;
 
 import my.study.controller.IndexController;
-import my.study.controller.UserController;
-import my.study.service.TestService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
-import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
@@ -18,7 +15,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 /**
  * Created by xpcomrade on 2017/4/10.
  * Copyright (c) 2017, xpcomrade@gmail.com All Rights Reserved.
- * Description: TODO(这里用一句话描述这个类的作用). <br/>
+ * Description: (IndexController Tests). <br/>
  */
 // tells JUnit to run using Spring’s testing support. SpringRunner is the new name for SpringJUnit4ClassRunner
 @RunWith(SpringRunner.class)
@@ -30,10 +27,13 @@ public class IndexControllerTests {
 
     @Test
     public void index() throws Exception {
-        this.mvc.perform(get("/")).andDo(new ResultHandler() {
+        this.mvc.perform(get("/index")).andDo(new ResultHandler() {
             @Override
             public void handle(MvcResult result) throws Exception {
-                System.out.println(result.getResponse().getContentAsString());
+                System.out.println(
+                        "StatusCode -> " + result.getResponse().getStatus()
+                                + ",responseBody -> " + result.getResponse().getContentAsString()
+                );
             }
         });
     }
